@@ -8,7 +8,6 @@ function loopLoaded() {
   textAlign(CENTER)
   textSize(30)
   text('click to start', width / 2, height / 2)
-  audio.loop()
 }
 
 let audio, path1, bauhaus
@@ -18,15 +17,11 @@ function setup() {
   bauhaus = loadFont('BauhausStd-Medium.otf')
   audio = loadSound('SunPath.wav', loopLoaded)
   path1 = new Chaser()
-  background(0)
 
+  background(0)
   frameRate(60)
 
   fft = new p5.FFT()
-
-  userStartAudio().then(() => {
-    background(0)
-  })
 }
 
 function draw() {
@@ -37,8 +32,9 @@ function draw() {
   }
 }
 
-function keyPressed() {
-  if (keyCode === 82) {
-    background(0)
+function mousePressed() {
+  background(0)
+  if (audio.isPlaying() == false) {
+    audio.loop()
   }
 }

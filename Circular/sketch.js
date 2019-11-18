@@ -7,10 +7,11 @@ function loopLoaded() {
   textFont(bauhaus)
   textAlign(CENTER)
   textSize(35)
-  text('click to start audio', width / 2, height / 2)
+  text('click to start', width / 2, height / 2)
 }
 
 let arp, amplitude, level
+let bauhaus
 let fft, spectrum
 
 function setup() {
