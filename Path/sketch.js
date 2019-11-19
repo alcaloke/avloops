@@ -3,10 +3,8 @@ let loading = true
 function loopLoaded() {
   loading = false
   background(0)
-  fill(color('hotpink'))
-  textFont(bauhaus)
   textAlign(CENTER)
-  textSize(30)
+  fill(color('hotpink'))
   text('click to start', width / 2, height / 2)
 }
 
@@ -14,8 +12,13 @@ let audio, path1, bauhaus
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
+
   bauhaus = loadFont('BauhausStd-Medium.otf')
+  textFont(bauhaus)
+  textSize(30)
+
   audio = loadSound('SunPath.wav', loopLoaded)
+
   path1 = new Chaser()
 
   background(0)
@@ -34,6 +37,8 @@ function draw() {
 
 function mousePressed() {
   background(0)
+  textAlign(RIGHT)
+  text('click to refresh', width, height)
   if (audio.isPlaying() == false) {
     audio.loop()
   }
