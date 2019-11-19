@@ -24,7 +24,7 @@ function circular() {
   level = fft.getEnergy('mid')
   level = map(level, 0, 255, 0, 1)
 
-  print(level)
+  // print(level)
   d = map(level, 0, 1, 0, 360 / 5)
   er = map(level, 0, 0.5, 0.1, 5)
   sWeight = map(level, 0, 0.5, 0.005, 0.02)
