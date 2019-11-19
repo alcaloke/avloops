@@ -26,8 +26,10 @@ function setup() {
 }
 
 function mouseClicked() {
-  beat.loop()
-  myDiv.remove()
+  if (!beat.isPlaying()) {
+    beat.loop()
+    myDiv.remove()
+  }
 }
 
 let bCirlce, pCircle
